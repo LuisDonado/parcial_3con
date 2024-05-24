@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\FacturaController;
+use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\CitaController;
+use App\Http\Controllers\TratamientoController;
+use App\Http\Controllers\HistorialMedicoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +20,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResource('/pacientes', PacienteController::class);
+Route::apiResource('/facturas', FacturaController::class);
+Route::apiResource('/empleados', EmpleadoController::class);
+Route::apiResource('/citas', CitaController::class);
+Route::apiResource('/tratamientos', TratamientoController::class);
+Route::apiResource('/historialesmedicos', HistorialMedicoController::class);
+
+
+
